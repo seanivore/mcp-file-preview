@@ -1,0 +1,16 @@
+{
+  "name": "mcp-file-preview",
+  "version": "1.0.0",
+  "description": "MCP server for previewing local HTML files",
+  "main": "build/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && chmod +x build/index.js",
+    "start": "node build/index.js",
+    "dev": "ts-node --esm src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["mcp", "file-preview", "html"],
+  "author": "",
+  "license": "ISC"
+}
