@@ -101,15 +101,67 @@ Returns counts of:
 
 ## Development
 
-1. Make changes in `src/`
-2. Build:
+1. Install dependencies:
+```bash
+npm install @modelcontextprotocol/sdk puppeteer typescript @types/node @types/puppeteer
+```
+
+2. Make changes in `src/`
+3. Build:
 ```bash
 npm run build
 ```
-3. Test locally:
+4. Test locally:
 ```bash
 npm run dev
 ```
+
+## Implementation Details
+
+The server uses the MCP SDK's Server class with proper initialization:
+
+```typescript
+this.server = new Server(
+  // Metadata object
+  {
+    name: 'file-preview-server',
+    version: '0.1.0'
+  },
+  // Options object with capabilities
+  {
+    capabilities: {
+      tools: {
+        preview_file: {
+          description: 'Preview local HTML file and capture screenshot',
+          inputSchema: {
+            // ... schema definition
+          }
+        }
+      }
+    }
+  }
+);
+```
+
+Key points:
+- Server constructor takes separate metadata and options objects
+- Tools are declared in capabilities.tools
+- Each tool needs a description and inputSchema
+- Screenshots are saved to a local `screenshots/` directory
+
+## Debugging
+
+1. Use the MCP Inspector:
+```bash
+npx @modelcontextprotocol/inspector
+```
+
+2. Connect with:
+   - Transport Type: STDIO
+   - Command: node
+   - Arguments: /path/to/build/index.js
+
+3. Check Claude OS logs if tools don't appear in the dropdown
 
 ## Contributing
 

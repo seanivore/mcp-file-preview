@@ -1,16 +1,38 @@
 {
   "name": "mcp-file-preview",
   "version": "1.0.0",
-  "description": "MCP server for previewing local HTML files",
+  "description": "MCP server for previewing local HTML files and capturing screenshots",
   "main": "build/index.js",
   "type": "module",
+  "bin": {
+    "mcp-file-preview": "./build/index.js"
+  },
   "scripts": {
-    "build": "tsc && chmod +x build/index.js",
+    "build": "tsc --listFiles --listEmittedFiles && mkdir -p build && chmod +x build/index.js",
     "start": "node build/index.js",
     "dev": "ts-node --esm src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["mcp", "file-preview", "html"],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "mcp",
+    "file-preview",
+    "html",
+    "screenshot",
+    "claude"
+  ],
+  "author": "Sean Horvath",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seanivore/mcp-file-preview.git"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "puppeteer": "^23.11.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.5",
+    "@types/puppeteer": "^7.0.4"
+  }
 }
