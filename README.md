@@ -2,6 +2,8 @@
 
 A Model Context Protocol (MCP) server that provides HTML file preview and analysis capabilities. This server enables capturing full-page screenshots of local HTML files and analyzing their structure.
 
+<a href="https://glama.ai/mcp/servers/23jdwr6v07"><img width="380" height="200" src="https://glama.ai/mcp/servers/23jdwr6v07/badge" alt="File Preview Server MCP server" /></a>
+
 ## Features
 
 - **File Preview**: Capture full-page screenshots of HTML files with proper CSS styling
